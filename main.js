@@ -10,6 +10,7 @@ let messageEl = document.getElementById('message-el')
 let sumEl = document.getElementById('sum-el')
 let cardsEl = document.getElementById('cards-el')
 let playerEl = document.getElementById('player-el')
+let startEl = document.getElementById('start-el')
 
 playerEl.textContent = `${player.name}: $${player.chip}`
 
@@ -31,6 +32,7 @@ function startGame() {
 }
 
 function renderGame() {
+    startEl.textContent = 'START GAME'
     cardsEl.textContent = "Cards: "
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += cards[i] + " "
@@ -45,6 +47,7 @@ function renderGame() {
     } else {
         message = "You're out of the game!"
         isAlive = false
+        startEl.textContent = 'RESET'
     }
     messageEl.textContent = message
 }
